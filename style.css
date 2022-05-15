@@ -35,3 +35,9 @@
   justify-content: center;
   font-size: x-small;
 }
+
+.random {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(autofit, 1fr);
+}

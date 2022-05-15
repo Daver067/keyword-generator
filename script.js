@@ -9,6 +9,16 @@ submitBtn.addEventListener("click", createKeywordObject);
 function createKeywordObject() {
   newKeywords = keywords.value;
   keywordsArray = newKeywords.split("\n");
+  for (let i = 0; i < keywordsArray.length; i++) {
+    let regEx = /[a-z]/;
+    if (keywordsArray[i].match(regEx)) {
+      console.log("it has a letter!");
+    } else {
+      console.log("no letters detected");
+      keywordsArray.splice(i, 1);
+      i--;
+    }
+  }
   listKeywords.textContent = `Your keywords (${
     keywordsArray.length
   }) are: ${keywordsArray.join(", ")}`;
@@ -46,6 +56,6 @@ function displayRandom() {
     randomKeywords[i] = miniKeywordArray.splice(randomArray, 1);
   }
   let pRandomArray = document.createElement("h4");
-  pRandomArray.innerHTML = randomKeywords.join(", ");
+  pRandomArray.innerHTML = randomKeywords.join(", ").toLowerCase();
   random.appendChild(pRandomArray);
 }
