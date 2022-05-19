@@ -12,12 +12,22 @@
     <div class="container">
       <div class="header">A keyword generator for my Ladyfriend Hups</div>
       <div class="content">
-        <label for="keywords"
-          >Enter keywords, separated by pressing enter
-        </label>
-        <textarea name="keywords" id="keywords" cols="100" rows="30"></textarea>
-        <br />
-        <button id="submit-keywords">Submit Keywords</button>
+        <div class="inputs">
+          <label for="keywords"
+            >Enter keywords, separated by line break (press enter)
+          </label>
+          <textarea
+            name="keywords"
+            id="keywords"
+            cols="75"
+            rows="20"
+            placeholder="keyword one &#10keyword two &#10keyword three &#10etc.."
+          ></textarea>
+        </div>
+        <div class="button">
+          <button id="submit-keywords">Submit Keywords</button>
+          <button id="clear">Clear All</button>
+        </div>
         <p id="list-keywords"></p>
         <div id="random"></div>
       </div>
@@ -27,3 +37,12 @@
     </div>
   </body>
 </html>
+
+<!--
+  one
+  two
+  three
+  four
+  five
+  six
+-->
