@@ -41,6 +41,8 @@ function displayKeywordsAndButton() {
   removeRandom();
   createLabel();
   createInput();
+  createIterationLabel();
+  createIterationInput();
   createBtn();
 }
 
@@ -48,7 +50,7 @@ function displayKeywordsAndButton() {
 function createBtn() {
   let btn = document.createElement("button");
   btn.innerHTML = "Click Me For Random!";
-  btn.addEventListener("click", displayRandom);
+  btn.addEventListener("click", repeatRandomElements);
   random.appendChild(btn);
 }
 
@@ -71,6 +73,35 @@ function createLabel() {
   label.for = "randoNum";
   label.innerHTML = "Number of random elements you would like:";
   random.appendChild(label);
+}
+
+//function creates label for number of iterations of random numbers
+function createIterationLabel() {
+  let label = document.createElement("label");
+  label.classList.add("new-label");
+  label.classList.add("bold");
+  label.for = "iterations";
+  label.innerHTML = "Number of iterations of random elements you would like:";
+  random.appendChild(label);
+}
+
+//creates the input
+function createIterationInput() {
+  let input = document.createElement("input");
+  input.type = "number";
+  input.name = "iteration";
+  input.id = "iteration";
+  input.value = 1;
+  input.min = 1;
+  random.appendChild(input);
+}
+
+//loops the number of random elements the specified amount of times in iteration input
+function repeatRandomElements() {
+  const randomIterations = document.getElementById("iteration").value;
+  for (let i = 0; i < randomIterations; i++) {
+    displayRandom();
+  }
 }
 
 //this function does too much
