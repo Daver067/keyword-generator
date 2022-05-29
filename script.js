@@ -123,7 +123,7 @@ function displayRandom() {
 
 //if you ask for more random keywords than you provided throws an error
 function checkInputLength(input, miniKeywordArray) {
-  if (input.value >= miniKeywordArray.length) {
+  if (input.value > miniKeywordArray.length) {
     let pRandomArray = document.createElement("h4");
     pRandomArray.classList.add("error");
     pRandomArray.innerHTML =
